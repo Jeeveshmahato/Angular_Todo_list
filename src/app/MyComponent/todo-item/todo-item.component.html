@@ -1,0 +1,15 @@
+<div>
+  <h2 [ngClass]="{ strike: !todo.active }">{{ todo.title }}</h2>
+  <p [ngClass]="{ strike: !todo.active }">{{ todo.desc }}</p>
+  <div class="mb-3 form-check">
+    <input
+      type="checkbox"
+      class="form-check-input"
+      id="todo{{i}}"
+      (click)="OnCheckboxClick(todo)"
+      [checked]="!todo.active"
+    />
+    <label class="form-check-label" for="todo{{i}}">Done</label>
+  </div>
+  <button (click)="OnClick(todo)">Delete</button>
+</div>
